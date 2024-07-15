@@ -61,6 +61,7 @@ public class BatchJobServiceImpl implements BatchJobService {
     @Override
     public boolean executeJob(LocalDateTime executionTime, String jobType) {
         while (true) {
+			System.out.println("testing ");
             LOG.info("checking time and sleeping " + LocalDateTime.now() + "recieved Time " + executionTime + " for job " + jobType);
             long timeForDelay = ChronoUnit.SECONDS.between(LocalDateTime.now(), executionTime);
             LOG.info("time delay in second for " + jobType + "  " + timeForDelay);
